@@ -9,6 +9,7 @@ app.post("/", upload.single("upload-file"), function(req, res) {
 
 app.use(express.static('public'));
 
-app.listen(8000, function() {
-	console.log("  Listening on port 8000");
+var port = process.env.PORT || 8000
+app.listen(port, function() {
+	console.log("  Listening on port", port);
 });
